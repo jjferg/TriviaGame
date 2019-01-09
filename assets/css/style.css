@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+#nin{
+    width: 20%;
+}
+
+body {
+    /* background: url("https://cdn.wallpapersafari.com/12/98/Mve3mf.png"); */
+    background-color: black;
+    background-size: 1500px 700px;
+    background-repeat: no-repeat;
+    color: yellowgreen;
+    font-family: 'Times New Roman', Times, serif
+
+}
+
+#img{
+    
+    background: url("https://i.redd.it/kvdxr5i00ipz.png");
+    background-color: black;
+    background-size: 1500px 700px;
+    background-repeat: no-repeat;
+    color: yellowgreen;
+
+
+}
+h1 {width: 100%;
+    text-align: center;
+}
+    h3{
+        color: rgb(128, 0, 90);
+    
+    }
+
+.checkbox{
+    width: 100%; 
+}
+
+#start{
+    width: 100%;
+    color: red;
+    border-color: black;
+    background-color: black;
+    text-align: center;
+
+}
+#title{
+    position: relative;
+}
+input[type=checkbox]:checked {
+    background: green !important;
+    color: black !important;
+}
+
+
