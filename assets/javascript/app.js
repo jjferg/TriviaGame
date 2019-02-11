@@ -1,12 +1,9 @@
 $(document).ready(function () {
-    // hidding the form befor start so user cannot see the questions.
-    // $("form").hide()
+// hidding the form befor start so user cannot see the questions.
+    $("form").hide()
     $("#title").hide()
 
-
-
-
-    // declaring variable for time, sound and answers.
+ // declaring variable for time, sound and answers.
     var time = 60;
 
     var inCorrect = 0;
@@ -21,9 +18,7 @@ $(document).ready(function () {
     var Image = document.createElement("img");
     Image.setAttribute("img", "assets/images/metroid-samus-returns-wallpaper-18.png")
 
-
-
-    // these function stops the user form picking multiple answer for the same quedtion
+// these function stops the user form picking multiple answer for the same quedtion
     $('.check').click(function () {
         $('.check').not(this).prop('checked', false);
     });
@@ -50,61 +45,29 @@ $(document).ready(function () {
 
     $('input[type=checkbox]').prop('checked').length;
 
-
-
-   
-
-
-    // start game function. 
+// start game function. 
     $('#start').one("click", function () {
-        // gameSound.play();
+        gameSound.play();
     
-     
-
-
-
-        // shows/displays the question form.
+// shows/displays the question form.
         $("form").delay(500).show(1500);;
         $("#title").show();
         $("#start").hide();
         $("#title").animate({ right: '450px' });
         
-
-        
-
-
-
-
-
-        // checking for right and wrong answers and tally them up
+// checking for right and wrong answers and tally them up
         $('input[name="correct"]').click(function () {
          if ($(this).prop("checked") === true)
                 correct++; 
-                
-             else  correct--;
-             
-              
+                else  correct--;
         })
-
-
         $('input[name="answer"]').click(function () {
             if ($(this).prop("checked") === true) 
-                inCorrect++;
-
-             else  inCorrect--;
+                inCorrect++;else  inCorrect--;
 
            })
    
-
-
-          
-
- 
-        
-
-
-
-        // Submit button form and results
+// Submit button form and results
         $("form").submit(function () {
             clearInterval(timeCounter)
             $('form').hide()
@@ -115,14 +78,7 @@ $(document).ready(function () {
                 + " " + "No answer: " + noAnswer + "<h1>")
         })
             
-
-        
-
-
-
-
-
-        // Time counter expiration and results
+// Time counter expiration and results
         var timeCounter = setInterval(twoMinutes, 1000);
 
         function twoMinutes() {
@@ -131,11 +87,7 @@ $(document).ready(function () {
             time--;
 
             $("#time").text("Time: " + time + " " + "seconds ");
-
-
-
-
-            if (time <= 0) {
+             if (time <= 0) {
                 clearInterval(timeCounter);
                 console.log(timeCounter)
                 $('input[type="checkbox[]"]').filter('checked').length
@@ -146,16 +98,9 @@ $(document).ready(function () {
                 $('body').append("<body>" + Image + "<body>");
                 $('body').html("<h1>" + "Correct Answers: " + correct + " " + "Wrong Answers: " + inCorrect
                     + " " + "No answer: " + noAnswer + "<h1>");
-
-
-
+                }
             }
-
-
-        }
-
-
-    })
+        })
 
 
 
