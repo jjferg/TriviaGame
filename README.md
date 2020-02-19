@@ -17,3 +17,9 @@ https://jjferg.github.io/TriviaGame/
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. After install in the terminal run: NPM install to download all the neccesarry packeges for the app.
 6. Link to [Install Instructions](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+ ## Start Screen Display
+![Start Screen](images/triviaScreen.jpg.png)
+
+## Quiz Screen
+![QUIZ](images/TriviaScreen2.jpg.png)
