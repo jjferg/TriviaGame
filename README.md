@@ -21,5 +21,4 @@ https://jjferg.github.io/TriviaGame/
  ## Start Screen Display
 ![Start Screen](images/triviaScreen.jpg.png)
 
-## Quiz Screen
-![QUIZ](images/TriviaScreen2.jpg.png)
+
