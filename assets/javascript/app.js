@@ -18,13 +18,15 @@ $(document).ready(function () {
     var Image = document.createElement("img");
     Image.setAttribute("img", "assets/images/metroid-samus-returns-wallpaper-18.png")
 
-// these function stops the user form picking multiple answer for the same quedtion
+// these function stops the user form picking multiple answers for the same quedtion
     $('.check').click(function () {
         $('.check').not(this).prop('checked', false);
+        $('input[type=checkbox]').prop('checked');
     });
 
     $('.check1').click(function () {
         $('.check1').not(this).prop('checked', false);
+        $('input[type=checkbox]').prop('checked');
     });
 
     $('.check2').click(function () {
@@ -43,6 +45,12 @@ $(document).ready(function () {
 
     });
 
+    $('.check5').click(function () {
+        $('.check5').not(this).prop('checked', false);
+        $('input[type=checkbox]').prop('checked');
+
+    });
+
     $('input[type=checkbox]').prop('checked').length;
 
 // start game function. 
@@ -57,18 +65,17 @@ $(document).ready(function () {
         
 // checking for right and wrong answers and tally them up
         $('input[name="correct"]').click(function () {
-         if ($(this).prop("checked") === true)
+         if ($(this).prop("checked") ) 
                 correct++; 
-                else  correct--;
         })
         $('input[name="answer"]').click(function () {
             if ($(this).prop("checked") === true) 
-                inCorrect++;else  inCorrect--;
-
+                inCorrect++;
            })
    
 // Submit button form and results
-        $("form").submit(function () {
+        $("form").submit(function (event) {
+            event.preventDefault()
             clearInterval(timeCounter)
             $('form').hide()
             $('#img').hide()
@@ -91,9 +98,6 @@ $(document).ready(function () {
                 clearInterval(timeCounter);
                 console.log(timeCounter)
                 $('input[type="checkbox[]"]').filter('checked').length
-                // clearInterval(timeCounter);
-
-
                 $('form').hide()
                 $('body').append("<body>" + Image + "<body>");
                 $('body').html("<h1>" + "Correct Answers: " + correct + " " + "Wrong Answers: " + inCorrect
