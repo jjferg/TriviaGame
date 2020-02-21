@@ -64,12 +64,18 @@ $(document).ready(function () {
         $("#title").animate({ right: '450px' });
         
 // checking for right and wrong answers and tally them up
-        $('input[name="correct"]').click(function () {
-         if ($(this).prop("checked") ) 
-                correct++; 
+        $('input[name="correct"]').change(function () {
+         if ($(this).prop("checked") ) {
+                correct++; }
+                else{($(!this).prop('checked'))
+                correct--;
+                   
+                }
+                // if ($(this).prop("checked"))
+                // correct--;
         })
         $('input[name="answer"]').click(function () {
-            if ($(this).prop("checked") === true) 
+            if ($(this).prop("checked") ) 
                 inCorrect++;
            })
    
